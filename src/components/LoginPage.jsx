@@ -28,7 +28,9 @@ function handleChange(event){
 
 async function handleClick(event, data){
   event.preventDefault()
+  console.log(data)
   await loginUser(data)
+  console.log(isAuthenticated())
   if (isAuthenticated()){
     setUserAuthenticated(true)
     navigate('/todo')

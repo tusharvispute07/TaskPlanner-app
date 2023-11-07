@@ -24,6 +24,7 @@ export async function loginUser(data){
     console.log("reached loginUser")
     try{
         const response = await axios.post("https://taskplanner-makp.onrender.com/api/login", data, {withCredentials: true})
+        console.log(response)
         return response;
     }catch(error){
         console.log("Error siging up")
