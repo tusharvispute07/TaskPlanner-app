@@ -1,9 +1,4 @@
-import Cookies from "js-cookie"
-
-const cookieName = 'authToken'
-
-export default function logoutUser(setUserAuthenticated){
-    Cookies.remove(cookieName)
-    setUserAuthenticated(false)
-
+export default function logoutUser(setUserAuthenticated) {
+    localStorage.removeItem('authToken');
+    setUserAuthenticated(false);
 }

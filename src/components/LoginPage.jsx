@@ -25,18 +25,21 @@ function handleChange(event){
     })
   }
 
-
-async function handleClick(event, data){
-  event.preventDefault()
-  console.log(data)
-  await loginUser(data)
-  console.log(isAuthenticated())
-  if (isAuthenticated()){
-    setUserAuthenticated(true)
-    navigate('/todo')
-  }else {
-    setErrorMessage("Invalid Credentials")
-    setIsErrorVisible(true)
+async function handleClick(event, data) {
+  event.preventDefault();
+  if (isAuthenticated()) {
+    navigate('/todo');
+  } else {
+    try {
+      await loginUser(data);
+      if (isAuthenticated()){
+        setUserAuthenticated(true)
+        navigate('/todo')
+      }
+    }catch (error) {
+      setErrorMessage("Invalid Credentials")
+      setIsErrorVisible(true)
+    }
   }
 }
 

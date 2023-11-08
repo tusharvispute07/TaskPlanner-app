@@ -2,7 +2,6 @@ import axios from 'axios'
 
 export async function registerUser(data){
     try{
-        console.log("reached register")
         const response = await axios.post("https://taskplanner-makp.onrender.com/api/register",data)
         return response
     }catch(error){
@@ -20,13 +19,15 @@ export async function checkUserExistence(username) {
     }
   }
 
-export async function loginUser(data){
-    console.log("reached loginUser")
-    try{
-        const response = await axios.post("https://taskplanner-makp.onrender.com/api/login", data, {withCredentials: true})
-        console.log(response)
+  export async function loginUser(data) {
+    console.log("reached loginUser");
+    try {
+        const response = await axios.post("https://taskplanner-makp.onrender.com/api/login", data);
+        const { token } = response.data;
+        localStorage.setItem('authToken', token)
         return response;
-    }catch(error){
-        console.log("Error siging up")
+    } catch (error) {
+        console.error("Error signing up", error)
+        throw error
     }
 }

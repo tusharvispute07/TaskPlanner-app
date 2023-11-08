@@ -1,9 +1,4 @@
-import Cookies from "js-cookie"
-
-const cookieName = 'authToken'
-
-export default function isAuthenticated(){
-    const authToken = Cookies.get(cookieName)
-    return !!authToken
-
+export default function isAuthenticated() {
+    const authToken = localStorage.getItem('authToken');
+    return !!authToken;
 }
