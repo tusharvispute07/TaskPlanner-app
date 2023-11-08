@@ -20,7 +20,7 @@ body {
 }
 .container{
   background-color:  	#f6f6f6;
-  min-width: 350px;
+  width: 350px;
   max-width:350px ;
   border-radius:5px ;
   padding: 5px;
@@ -175,7 +175,6 @@ ul{
   border-radius: 5px;
   max-width: 350px;
   box-shadow:2px 2px 5px grey;
-  min-width: 320px;
 }
 .page-title{
   font-size: 1.6rem;
@@ -199,7 +198,7 @@ ul{
   background-color: #f6f6f6;
   min-height: 300px;
   margin-top: 0px;
-  min-width: 380px;
+  width: 380px;
 }
 .greeting{
   font-size: 4rem;
@@ -279,6 +278,7 @@ footer p {
   background-color: rgba(0, 0, 0, 0.514);
   border-radius: 5px;
   width: 340px;
+  max-width:340px;
   padding: 8px;
   margin: 0 auto; 
   margin-top: 30px;
@@ -289,4 +289,23 @@ footer p {
   font-size: 0.6rem;
   line-height: 1.5;
   text-align: center;
+}
+
+@media screen and (min-width: 320px) and (max-width: 375px){
+  .home-screen{
+    width: 340px;
+  }
+  #home-button{
+    width: 165px;
+  }
+  .form{
+    width: 320px;
+  }
+  .container{
+    width: 320px;
+    max-width: 320px;
+  }
+  .quote{
+    width: 310px;
+  }
 }
